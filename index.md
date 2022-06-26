@@ -2,7 +2,7 @@
 
 本文若無特別標記皆為 C++，用於比賽前快速複習。  
 若有新發現會再更新  
-- [Code](https://github.com/Dinlon5566/Competitive-programming/tree/master/Code)
+- [Code](https://github.com/Dinlon5566/Competitive-programming/tree/main/code)
 
 # 技巧
 
@@ -19,7 +19,7 @@
 using ll = long long;
 
 // 放在 main 開頭，若只用 cin/cout 可以加速 (1.取消同步指針2.取消cin/cout綁定)
-/* <span style="color:red">不要混用 printf scanf !</span> */
+/* 不要混用 printf & scanf ! */
 (std::)ios::sync_with_stdio(false);
 (std::)cin.tie(NULL);
 ```
@@ -27,8 +27,8 @@ using ll = long long;
 ## 常用
 
 ```cpp
-//設定 arr 到前 sizeof(arr) 設為字節 0
-/* <span style="color:red">不要對 non-POD 容器進行 memset，會非法存取!</span> */
+//設定 arr 全部為 0
+/* 不要對 non-POD 容器進行 memset，會非法存取! */
 memset(arr,0,sizeof(arr)); 
 
 //快速輸出 2D 陣列
@@ -40,7 +40,7 @@ for(auto a:v2d){
 
 //執行時間 ta~tb
 int ta=clock();
-/* . . . 程式碼 . . . */
+/* Code */
 int tb=clock();
 cout<<v.size()<<endl;
 
@@ -113,16 +113,16 @@ struct TreeNode {
 
 # 算法
 
-## 
+尚未更新
 
 # 愚蠢錯誤檢查
 
 當出現一些無法解釋的問題，試試看以下常見問題
 
-- [ ]  = 跟 == 符號誤寫
-- [ ]  Debug 輸出刪除
-- [ ]  換行 空格
-- [ ]  邊際條件
+-   = 跟 == 符號誤寫
+-   Debug 輸出刪除
+-   換行 空格
+-   邊際條件
 
 ---
 
