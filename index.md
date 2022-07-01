@@ -8,59 +8,72 @@
 
 ## 宣告
 
+萬用標頭
 ```cpp
-//萬用標頭
 #include <bits/stdc++.h>
+```
 
-//正無限替代，可以應用於 memset、inf+inf等
+正無限替代，可以應用於 memset、inf+inf 等
+```cpp
 #define INF 0x3f3f3f3f
+```
 
-// long long 縮寫
+long long 縮寫
+```cpp
 using ll = long long;
+```
 
-// 放在 main 開頭，若只用 cin/cout 可以加速 (1.取消同步指針2.取消cin/cout綁定)
-/* 不要混用 printf & scanf ! */
+放在 main 開頭，若只用 cin/cout 可以加速 (1.取消同步指針2.取消cin/cout綁定)  
+***不要混用 printf & scanf ! ***
+```cpp
 (std::)ios::sync_with_stdio(false);
 (std::)cin.tie(NULL);
 ```
 
 ## 常用
-
+設定 arr 全部為 0  
+***不要對 non-POD 容器進行 memset，會非法存取!***
 ```cpp
-//設定 arr 全部為 0
-/* 不要對 non-POD 容器進行 memset，會非法存取! */
 memset(arr,0,sizeof(arr)); 
-
-//快速輸出 2D 陣列
+```
+快速輸出 2D 陣列
+```cpp
 for(auto a:v2d){
         for(auto b:a)
             cout<<b<<" ";
         puts("");
 }
-
-//執行時間 ta~tb
+```
+執行時間 ta~tb
+```cpp
 int ta=clock();
 /* Code */
 int tb=clock();
 cout<<v.size()<<endl;
-
-// ++i 比 i++ 快了一點點點 ( 還不如 cout 改成 printf )
-
-//scanf 到 EOF
+```
+++i 比 i++ 快了一點點點 ( 還不如 cout 改成 printf )  
+  
+scanf 到 EOF
+```cpp
 while(cin>>n){}
-
 ```
 
 ### 字串讀入
 
+單個字符
 ```cpp
-// 單個字符
 ch=cin.get();
-// 清除緩衝
+```
+清除緩衝
+```cpp
 cin.ignore();
-// string 讀入一行
+```
+string 讀入一行
+```cpp
 getline(cin,str);
-// char[n] 讀入 n 字
+```
+char[n] 讀入 n 字
+```cpp
 cin.getline(cha,n);
 gets(cha);
 ```
@@ -69,20 +82,24 @@ gets(cha);
 
 ## Vector
 
+生成 n*m 二維vector
 ```cpp
-//生成 n*m 二維vector
 vector<vector<int>> v2d(n,vector<int>(m,0));
-
-// 將 obj 推入 v 
+```
+將 obj 推入 v 
+```cpp
 v.push_back(obj);
-
-// 重設大小，若 size 大於原本補上 num
+```
+重設大小，若 size 大於原本補上 num
+```cpp
 v2d[n].resize(size,num);
-
-// 重設大小，全替換成 num
+ ```
+重設大小，全替換成 num
+```cpp
 v2d[n].assign(size,num);
-
-// Sort 
+ ```
+Sort 
+```cpp
 sort(v.begin(),v.end());
 ```
 
@@ -90,8 +107,8 @@ sort(v.begin(),v.end());
 
 # Struct
 
+Binary tree
 ```cpp
-// Binary tree
 struct TreeNode {
       int val;
       TreeNode *left;
@@ -100,7 +117,10 @@ struct TreeNode {
       TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
       TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
   };
-// Link list
+```
+
+Link list
+```cpp
     struct ListNode {
       int val;
       ListNode *next;
