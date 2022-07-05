@@ -123,7 +123,6 @@ v2d[n].assign(size,num);
 ## map
 初始化及插入值
 ```cpp
-    map<int,string> myMap={{2,"Two"},{4,"Four"}};
     myMap.insert(pair<int,string>(1,"one"));
     myMap[3]="Three";
 ```
