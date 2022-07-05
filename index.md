@@ -51,7 +51,6 @@ int ta=clock();
 int tb=clock();
 cout<<v.size()<<endl;
 ```
-++i 比 i++ 快了一點點點 ( 還不如 cout 改成 printf )  
   
 scanf 到 EOF
 ```cpp
@@ -90,23 +89,24 @@ vector<vector<int>> v2d(n,vector<int>(m,0));
 ```cpp
 v.push_back(obj);
 ```
-重設大小，若 size 大於原本補上 num
+重設大小
++ 若 size 大於原本補上 num
 ```cpp
 v2d[n].resize(size,num);
  ```
-重設大小，全替換成 num
++ 全替換成 num
 ```cpp
 v2d[n].assign(size,num);
  ```
-Sort 
-```cpp
-sort(v.begin(),v.end());
-```
+
 ## Set
-物件操作
+初始化及插入值
 ```cpp
     set<int> mySet{3,8,9};
     mySet.insert(num);
+```
+刪除值及清空
+```cpp
     mySet.erase(num);
     mySet.clear();
  ```
@@ -120,7 +120,74 @@ sort(v.begin(),v.end());
         puts("found");
 ```
 
+## map
+初始化及插入值
+```cpp
+    map<int,string> myMap={{2,"Two"},{4,"Four"}};
+    myMap.insert(pair<int,string>(1,"one"));
+    myMap[3]="Three";
+```
+刪除值
+```cpp
+    myMap.erase(num);
+    myMap.clear();      
+```
+遍歷
+```cpp
+    cout<<myMap.at(3);
+    for(auto s:myMap){
+        cout<<s.first<<" "<<s.second<<endl;
+    }
+    
+    map<int,string>::iterator it;
+    for(it=myMap.begin();it!=myMap.end();it++){//rbegin()~rend();
+        cout<<(*it).first<<" "<<(*it).second<<endl;
+    }
+```
+## Sort
 
+範例陣列
+```cpp
+    int arr[]= {3,9,8,6,2,5,4,1,7};
+    vector<int> v= {3,9,8,6,2,5,4,1,7};
+```
+升序排序
+```cpp
+    // std::begin() 取得 c-style 陣列首尾
+    sort(begin(arr),end(arr));
+    sort(v.begin(),v.end());
+```
+升序與降序
+```cpp
+    sort(begin(arr),end(arr),less<int>());
+    sort(begin(arr),end(arr),greater<int>());
+```
+自訂方法
++ 自訂函數
+```cpp
+bool cmp(int a,int b){
+    return a>b;
+}
+    sort(v.begin(),v.end(),cmp);
+```
++ 反向指針
+```cpp
+
+    sort(v.rbegin(),v.rend());
+ ```
++ lambda
+```cpp
+    sort(v.begin(),v.end(),[](int a,int b){ return a>b; });
+```
++ operator
+```cpp
+class myclass{
+    int first,second;
+    bool operator()(myclass a,myclass b){
+        return a.first<a.first;
+    }
+};
+```
 ## Algorithm
 
 # Struct
