@@ -24,7 +24,7 @@ using ll = long long;
 ```
 
 放在 main 開頭，若只用 cin/cout 可以加速 (1.取消同步指針2.取消cin/cout綁定)  
-***不要混用 printf & scanf ! ***
+***不要混用 printf & scanf !***
 ```cpp
 (std::)ios::sync_with_stdio(false);
 (std::)cin.tie(NULL);
@@ -102,6 +102,24 @@ Sort
 ```cpp
 sort(v.begin(),v.end());
 ```
+## Set
+物件操作
+```cpp
+    set<int> mySet{3,8,9};
+    mySet.insert(num);
+    mySet.erase(num);
+    mySet.clear();
+ ```
+ 找尋物件
+ ```cpp
+    //方法一 return bool
+    mySet.count(num)
+    //方法二 return iterator
+    auto iter=mySet.find(num);
+    if(iter!=mySet.end())
+        puts("found");
+```
+
 
 ## Algorithm
 
